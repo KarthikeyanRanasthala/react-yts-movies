@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import DownloadLink from './DownloadLink';
 
 const MovieCard = props => {
+    console.log(props);
     return (
         <div className='col m4 s12'>
             <div className='card'>
@@ -17,7 +18,7 @@ const MovieCard = props => {
                 <div className='card-reveal'>
                      <span className='card-title flow-text grey-text text darken-4'>{props.data.title}<i className="material-icons right">close</i></span>
                      <p>{props.data.summary}</p>
-                     <p className='center'><a href={`https://youtube.com/watch?v=${props.yt_trailer_code}`} className='waves-effect waves-light black btn-small'>Watch Trailer</a></p>
+                     <p className='center'><a href={`https://youtube.com/watch?v=${props.data.yt_trailer_code}`} className='waves-effect waves-light black btn-small'>Watch Trailer</a></p>
                      {props.data.torrents.map(ele => <DownloadLink data={ele} key={ele.hash} />)}
                 </div>
             </div>
